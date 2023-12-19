@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Form</title>
+    <link rel="stylesheet" th:href="@{/css/car.css}">
+</head>
+<body>
+<i>Fill out the form below according to the specifications of the car. Fields marked with an Asterisk(*) are required.</i>
+<form th:action="@{/processForm}" th:object="${car}" method="POST">
+    <div class="form-element">
+        Brand(*):
+        <span th:if="${#fields.hasErrors('brand')}"
+              th:errors="*{brand}"
+              class="error"></span>
+        <input type="text" th:field="*{brand}" />
+    </div>
+    <div class="form-element">
+        Model(*):
+        <span th:if="${#fields.hasErrors('model')}"
+              th:errors="*{model}"
+              class="error"></span>
+        <input type="text" th:field="*{model}" />
+    </div>
+    <div class="form-element">
+        Year  (*):
+        <span th:if="${#fields.hasErrors('year')}"
+              th:errors="*{year}"
+              class="error"></span>
+        <input type="text" th:field="*{year}" />
+    </div>
+    <div class="form-element">
+        Email(*):
+        <span th:if="${#fields.hasErrors('email')}"
+              th:errors="*{email}"
+              class="error"></span>
+        <input type="text" th:field="*{email}" />
+    </div>
+    <div class="form-element">
+        Promotion Code:
+        <span th:if="${#fields.hasErrors('promotionCode')}"
+              th:errors="*{promotionCode}"
+              class="error"></span>
+        <input type="text" th:field="*{promotionCode}" />
+    </div>
+    <input type="submit" value="Submit" class="button">
+</form>
+</body>
+</html>

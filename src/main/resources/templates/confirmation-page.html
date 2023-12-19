@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Confirmation</title>
+</head>
+<body>
+The car is confirmed:
+<span th:text="${car.brand + ' ' +car.model+ ' ' +car.year}" />
+<br>
+E-mail:
+<span th:text="${car.email}" />
+<br>
+Promotion Code:
+<span th:text="${car.promotionCode}" />
+</body>
+</html>
